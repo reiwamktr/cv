@@ -1,0 +1,135 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-size: 12px;
+  padding: 25px;
+}
+table{
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 900px;
+  height: 95vh;
+  text-align:center;
+  border: 3px solid black;
+}
+
+/* colgroup{
+  display: none;
+} */
+
+
+.col-8{
+  display: none;
+}
+
+.details{
+  width: 20px;
+}
+
+input{
+  padding: 3px;
+}
+
+
+
+textarea{
+  padding: 10px;
+  resize: both;
+  max-width: 455px;
+  min-width: 455PX;
+  max-height: 130px;
+  min-height: 70px;
+  overflow: hidden;
+
+  
+}
+
+.printBtn{
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border-style: none;
+  background-color: #808A24;
+  color: white;
+
+}
+
+.printBtn:hover{
+  box-shadow: 3px 3px 0 #555c13;
+  cursor: pointer;
+}
+
+col{
+  width: 52px;
+  border: 1px solid black;
+}
+
+tr{
+  border: 1px solid black;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.personalDetails tr:first-child {
+  height: 35px;
+}
+
+.imageContainer{
+  padding: 30px;
+  width: 200px;
+  height: 77px;
+  overflow: hidden;
+  position: relative; 
+}
+
+img{
+  width: calc(260px / 2); 
+  position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+
+}
+/* .col-1{
+  background: rgb(206, 241, 255);
+}
+.col-2{
+  background: rgb(206, 255, 236);
+}
+.col-3{
+  background: rgb(216, 255, 206);
+}
+.col-4{
+  background: rgb(248, 255, 206);
+}
+.col-5{
+  background: rgb(225, 206, 255);
+}
+.col-6{
+  background: rgb(255, 206, 206);
+}
+.col-7{
+  background: rgb(255, 110, 110);
+} */
+.col-8{
+  /* background: rgb(128, 138, 36); */
+  width: 30px;
+}
+.col-9{
+  /* background: rgb(95, 108, 219); */
+  width: 30px;
+}
+
+
+th{
+  background-color: #ddebf6;
+}
+th:hover{
+  background: #b4c9da;
+}
+
+
