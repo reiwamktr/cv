@@ -6,21 +6,26 @@
 body {
   font-size: 12px;
   padding: 25px;
+  height: 95vh;
 }
 
 table {
   border-collapse: collapse;
   table-layout: auto;
   width: 900px;
-  height: 95vh;
   text-align: center;
-  border: 3px solid black;
+  border: 1px solid rgb(135, 135, 135);
+  margin-bottom: 10px;;
+}
+
+.detailsTop{
+  height: 20vh;
 }
 
 
 
-.col-8 {
-  display: none;
+.col-7 {
+  width: 1800px;
 }
 
 .details {
@@ -36,14 +41,14 @@ input {
 }
 
 .labelContainer {
-  width: 130px;
-  height: 150px;
+  width: 140px;
+  height: 180px;
    display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
-  left: 35%;
+  left: 1%;
   cursor: pointer;
 
 }
@@ -74,9 +79,10 @@ input {
   justify-content: center;
   width: 50px;
   height: 50px;
+  font-weight: bold;
   border-radius: 50%;
   transform: scale(0.9);
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.434);
   font-size: 40px;
   
 }
@@ -117,22 +123,28 @@ tr {
   border: 1px solid black;
   height: 25px;
   margin-left: 10px;
+  padding: 20px;
 }
 
 .personalDetails tr:first-child {
   height: 35px;
 }
+td, th{
+  padding: 5px 0;
+  font-size: 15px;;
+}
 
 .imageContainer {
-  padding: 30px;
+  padding: 20px;
   width: 200px;
   height: 77px;
   overflow: hidden;
   position: relative;
+  object-fit: cover;
 }
 
 img {
-  width: calc(260px / 2);
+  width: calc(260px / 1.8);
   position: absolute;
   top: -9999px;
   bottom: -9999px;

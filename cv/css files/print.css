@@ -2,6 +2,17 @@
   display: none;
 }
 
+
+td, th{
+  padding: 0px;
+  font-size: 15px;
+  height: 10px;
+}
+
+tr{
+  border: 0.1px solid black;
+}
+
 button{
   display: none;
 }

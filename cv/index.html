@@ -11,7 +11,7 @@
 <body>
   <div id="deleteButtonContainer"></div>
   <button class="printBtn" id="printBtn">Print this page</button>
-  <table id="tableBody">
+  <table class="detailsTop">
     <colgroup>
       <col class="col-1">
       <col class="col-2">
@@ -20,27 +20,36 @@
       <col class="col-5">
       <col class="col-6">
       <col class="col-7">
-      <col class="col-8">
+      <col class="col-10">
       <col  class="col-9">
+      
     </colgroup>
     <tbody>
     <tbody class="personalDetails" style="border: 1px solid black">
       <tr>
-        <td colspan="2">01</td>
-        <th colspan="5">履歴書</th>
-        <td colspan="2" rowspan="4" class="imageContainer"><img src="/assets/images/dsf.png" alt=""></td>
+        <td colspan="6" style="font-size: 40px;">01</td>
+        <th colspan="1">履歴書</th>
+        <td colspan="2" rowspan="4" class="imageContainer">
+          <div class="labelContainer">
+            <label for="imageUploadBtn" class="labelForImageUploadBtn"></label>
+          <input type="file" id="imageUploadBtn" accept="image/jpeg, image/png, image/jpg, image/webp">
+          </div>
+            
+          <img  src="assets/images/braver-blank-pfp.jpg" alt="" style="z-index: -1;" id="imageFile">
+
+        </td>
       </tr>
       <tr>
-        <th colspan="2">ふりがな</th>
-        <td colspan="5"> <input id="japaneseName" placeholder="katakana मा लेख्नुहोस्" class="dynamicSizeInput" type="text"></td>
+        <th colspan="6">ふりがな</th>
+        <td colspan="1"> <input id="japaneseName" placeholder="katakana मा लेख्नुहोस्" class="dynamicSizeInput" type="text"></td>
       </tr>
       <tr>
-        <th colspan="2">氏名（Full Name）</th>
-        <td colspan="5"><input id="englishName" placeholder="english मा लेख्नुहोस् " class="dynamicSizeInput" type="text"></td>
+        <th colspan="6">氏名（Full Name）</th>
+        <td colspan="1"><input id="englishName" placeholder="english मा लेख्नुहोस् " class="dynamicSizeInput" type="text"></td>
       </tr>
       <tr>
-        <th colspan="2">生年月 日 (Date of birth)</th>
-        <td colspan="5">
+        <th colspan="6">生年月 日 (Date of birth)</th>
+        <td colspan="1">
           <select id="year"></select>
           <label for="year">年</label>
           <select id="month">
@@ -63,14 +72,14 @@
       </tr>
       <!-- //new row -->
       <tr>
-        <th colspan="2">ふりがな</th>
-        <td colspan="5"><input id="addressJP" placeholder="katakana मा लेख्नुहोस्" class="dynamicSizeInput" type="text"></td>
+        <th colspan="6">ふりがな</th>
+        <td colspan="1"><input id="addressJP" placeholder="katakana मा लेख्नुहोस्" class="dynamicSizeInput" type="text"></td>
         <th colspan="1">年齢 (Age）</th>
         <th colspan="1">性別 (Gender)</th>
       </tr>
       <tr>
-        <th colspan="2">出身地 (Birthplace)</th>
-        <td colspan="5"><input id="addressEnglish" class="dynamicSizeInput" placeholder="english मा लेख्नुहोस् " type="text"></td>
+        <th colspan="6">出身地 (Birthplace)</th>
+        <td colspan="1"><input id="addressEnglish" class="" placeholder="english मा लेख्नुहोस् " type="text"></td>
         <td id="age"></td>
         <td><select id="gender">
           <option>女</option>
@@ -78,6 +87,21 @@
         </select></td>
       </tr>
     </tbody>
+  </table>
+
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      
+    </colgroup>
 
     <!-- education started -->
 
@@ -170,14 +194,14 @@
         <th colspan="5">家族氏名 (Family composition)</th>
         <th>続柄 (Relationship)</th>
         <th>年生 (Year of birth)</th>
-        <th colspan="1">職業（Occupation）</th>
+        <th colspan="">職業（Occupation）</th>
         <th colspan="1">月収（Income）</th>
       </tr>
       <tr>
         <td colspan="5"><input type="text" size="40" class="familyName"></td>
         <td><select class="relationship"></select></td>
         <td><select class="birthYear"></select></td>
-        <td colspan="1"><input type="text" size="30"></td>
+        <td colspan="1"><input type="text" size="10"></td>
         <td colspan="1"><select name="" id=""></select></td>
       </tr>
       
@@ -258,8 +282,9 @@
   </table>
 </body>
 <script  src="https://unpkg.com/wanakana"></script>
-<script  src="/js files/educationBg.js"></script>
+<script  src="js files/educationBg.js"></script>
 <script  src="js files/companyBg.js"></script>
 <script src="js files/familyHistory.js"></script>
 <script  src="js files/details.js"></script>
+<script src="js files/uploadPFP.js"></script>
 </html>
