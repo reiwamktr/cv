@@ -267,18 +267,18 @@
       <tr>
         <th colspan="4">配偶者 (Married Staus):</th>
         <td colspan="2">
-          <input style="margin-right: 7px; margin-top: 5px;" value="single" id="single" type="radio" name="maritalOptions">
+          <input style="margin-right: 7px; margin-top: 5px;" value="single" id="single" type="radio" name="maritalOptions" required>
           <label for="single">未婚</label>
         </td>
 
         <td colspan="2">
-          <input style="margin-right: 7px; margin-top: 5px;" value="married" type="radio" name="maritalOptions" id="married">
+          <input style="margin-right: 7px; margin-top: 5px;" value="married" type="radio" name="maritalOptions" id="married" required>
           <label for="married">既婚</label>
           <div class="marriedWithChildrenHide " >
-            <input type="radio" value="children" name="childOption" id="children">
-            <label for="children">子供</label>
-            <input type="radio" value="no-children" name="childOption" id="noChildren">
-            <label for="noChildren">No Child</label>
+            <input type="radio" value="children" name="childOption" id="children" required>
+            <label for="children">子供がいる</label>
+            <input type="radio" value="no-child" name="childOption" id="noChildren" required>
+            <label for="noChildren">子供がいない</label>
           </div>
         </td>
         <td colspan="1"><input style="margin-right: 7px; margin-top: 5px;" value="divorced" type="radio"
@@ -292,11 +292,11 @@
     <tbody class="relativesInformation">
       <tr>
         <th colspan="4">在日親戚 (Relatives in Japan):</th>
-        <td colspan="4"><input style="margin-right: 7px; margin-top: 5px;" value="yes" type="radio" name="options">有
+        <td colspan="4"><input style="margin-right: 7px; margin-top: 5px;" value="yes" type="radio" name="relativeInfoJapan">有
         </td>
-        <td colspan="1"><input style="margin-right: 7px; margin-top: 5px;" value="no" type="radio" name="options">無</td>
+        <td colspan="1"><input style="margin-right: 7px; margin-top: 5px;" value="no" type="radio" name="relativeInfoJapan">無</td>
       </tr>
-      <tr>
+      <tr class="relativesInJapanInformation">
         <th colspan="2">氏名 (Full Name)</th>
         <td colspan="4"><input type="text" size="35"></td>
         <th colspan="1">住所 (Address):</th>
