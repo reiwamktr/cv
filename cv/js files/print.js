@@ -11,6 +11,6 @@ printBtn.addEventListener('click', ()=>{
   const rows = tableBody.querySelectorAll("tr");
   rows.forEach((row) => {
     const yearSelect = row.querySelector(".yearSelect");
-    console.log(yearSelect.value)
+    console.log(yearSelect)
   });
 })
