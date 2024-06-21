@@ -227,7 +227,7 @@
     </tbody>
     <tbody class="familyHistory">
       <tr>
-        <th colspan="9">Family <button>Add row</button></th>
+        <th colspan="9">Family <button id="addRowBtnFamily">Add row</button></th>
       </tr>
       <tr>
         <th colspan="5">家族氏名 (Family composition)</th>
@@ -236,12 +236,14 @@
         <th colspan="2">職業（Occupation）</th>
 
       </tr>
-      <tr>
-        <td colspan="5"><input type="text" size="40" class="familyName"></td>
-        <td><select class="relationship"></select></td>
-        <td><select class="birthYear"></select></td>
-        <td colspan="2"><input type="text" size="40"></td>
-      </tr>
+      <tbody id="dynamicTableFamily">
+        <tr>
+          <td colspan="5"><input type="text" size="40" class="familyName"></td>
+          <td><select class="relationship"></select></td>
+          <td><select class="birthYear"></select></td>
+          <td colspan="2"><input type="text" size="40" class="occupation"></td>
+        </tr>
+      </tbody>
 
     </tbody>
     <tbody class="qualifications">
