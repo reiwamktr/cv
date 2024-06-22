@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css-files/style.css">
+  <link rel="stylesheet" type="text/css" media="print" href="css-files/print.css" />
+</head>
+
+<body>
+  <div id="deleteButtonContainer"></div>
+  <button class="printBtn" id="printBtn">Print this page</button>
+  <table class="detailsTop">
+    <colgroup>
+      <col class="col-1">
+      <col class="col-2">
+      <col class="col-3">
+      <col class="col-4">
+      <col class="col-5">
+      <col class="col-6">
+      <col class="col-7">
+      <col class="col-10">
+      <col class="col-9">
+    </colgroup>
+    <tbody class="personalDetails" style="border: 1px solid black">
+      <tr>
+        <td colspan="6" style="font-size: 40px;">01</td>
+        <th colspan="1">履歴書</th>
+        <td colspan="2" rowspan="4" class="imageContainer">
+          <div class="labelContainer">
+            <label for="imageUploadBtn" class="labelForImageUploadBtn"></label>
+            <input type="file" id="imageUploadBtn" accept="image/jpeg, image/png, image/jpg, image/webp">
+          </div>
+
+          <img src="assets/images/braver-blank-pfp.jpg" alt="" style="z-index: -1;" id="imageFile">
+
+        </td>
+      </tr>
+      <tr>
+        <th colspan="6">ふりがな</th>
+        <td colspan="1"> <input id="japaneseName" placeholder="katakana मा लेख्नुहोस्" class="dynamicSizeInput"
+            type="text"></td>
+      </tr>
+      <tr>
+        <th colspan="6">氏名（Full Name）</th>
+        <td colspan="1"><input id="englishName" placeholder="english मा लेख्नुहोस् " class="dynamicSizeInput"
+            type="text"></td>
+      </tr>
+      <tr>
+        <th colspan="6">生年月 日 (Date of birth)</th>
+        <td colspan="1">
+          <select id="year"></select>
+          <label for="year">年</label>
+          <select id="month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <label for="month">月</label>
+          <select id="day">
+            <option value="" disabled selected hidden>1</option>
+          </select>
+          <label for="day">日</label>
+        </td>
+      </tr>
+      <!-- //new row -->
+      <tr>
+        <th colspan="6">ふりがな</th>
+        <td colspan="1"><input id="addressJP" placeholder="katakana मा लेख्नुहोस्" class="dynamicSizeInput" type="text">
+        </td>
+        <th colspan="1">年齢 (Age）</th>
+        <th colspan="1">性別 (Gender)</th>
+      </tr>
+      <tr>
+        <th colspan="6">出身地 (Birthplace)</th>
+        <td colspan="1"><input id="addressEnglish" class="" placeholder="english मा लेख्नुहोस् " type="text"></td>
+        <td id="age"></td>
+        <td><select id="gender">
+            <option>女</option>
+            <option>男</option>
+          </select></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="2">メール (E-mail )</th>
+        <td colspan="3"><input type="email" style="width: 90%"></td>
+        <th colspan="2">電話番号 (Phone)</th>
+        <td colspan="3">
+          <select name="" id=""></select>
+          <input type="text">
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">宗教 (Religion)</th>
+        <td colspan="3"><select name="" id=""></select></td>
+        <th colspan="2">国籍 (nationality)</th>
+        <td colspan="3">
+          <label for="nepalese">Nepalese</label>
+          <input type="radio" name="options" value="nepalese" id="nepalese">
+          <label for="indian">Indian</label>
+          <input type="radio" name="options" value="indian" id="indian">
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+
+    <!-- education started -->
+
+    <tbody class="educationDetails">
+      <tr>
+        <th colspan="9">(学歴) Education background (Qualification) <button id="addRowBtn" class="no"> Add Row</button>
+        </th>
+      </tr>
+      <tr>
+        <th>年 (Year)</th>
+        <th>月 (Month)</th>
+        <th colspan="2">（学校名）Institution Name</th>
+        <th colspan="2">(教育レベル) Education level</th>
+        <th colspan="2">（学部）Faculty</th>
+        <th colspan="1">（ステータス）Status</th>
+      </tr>
+    </tbody>
+
+    <tbody id="dynamicTableBody">
+      <tr>
+        <td><select name="" class="yearSelect"></select></td>
+        <td><select name="" class="monthSelect"></select></td>
+        <td colspan="2"><input type="text" class="dynamicSizeInput"></td>
+        <td colspan="2"><select name="" class="educationLevelSelect"></select></td>
+        <td colspan="2"><select name="" class="facultySelect"></select></td>
+        <td><select name="" class="statusSelect"></select></td>
+      </tr>
+
+    </tbody>
+    <!-- row started -->
+
+    <!-- workExperience started -->
+
+    <tbody class="employmentDetails">
+      <tr>
+        <th colspan="9"> (職歴) Work experience <button id="addRowBtnEmployer"> Add Row</button></th>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th>年 (Year)</th>
+        <th>月 (Month)</th>
+        <th colspan="4">（会社名）Company Name</th>
+        <th colspan="2">（職業）Working Sector</th>
+        <th colspan="1">（ステータス）Status</th>
+      </tr>
+    </tbody>
+
+    <tbody id="dynamicTableEmployer">
+      <tr>
+        <td><select name="" class="yearSelect"></select></td>
+        <td><select name="" class="monthSelect"></select></td>
+        <td colspan="4"><input type="text" class="dynamicSizeInput"></td>
+        <td colspan="2"><select name="" class="workingSectorSelect"></select></td>
+        <td colspan="2"><select name="" class="employerStatusSelect"></select></td>
+      </tr>
+    </tbody>
+
+    <!-- If needed than uncomment it  -->
+    <!-- <tr>
+        <td></td>
+        <td></td>
+        <td colspan="6">-</td>
+        <td>以上</td>
+      </tr> -->
+
+    <tbody class="personality">
+      <tr>
+        <th colspan="4">趣味・性格・長短・得意科目 (Preference・Personality・Favorite subjects)</th>
+        <th colspan="5">志望動機 (Purpose)</th>
+      </tr>
+      <tr>
+        <th colspan="2">趣味 (Hobby)</th>
+        <td colspan="3"><select name="hobby" id="hobbySelect"></select></td>
+        <td style="padding: 10px;" colspan="4" rowspan="3"><textarea class="" rows="4" cols="40" class
+            id="purpose"></textarea></td> <!--need to integrate input-->
+      </tr>
+      <tr>
+        <th colspan="2">性格 (Character)</th>
+        <td colspan="3"><select name="character" id="characterSelect"></select></td>
+      </tr>
+      <tr>
+        <th colspan="2">長所 (Strong Points)</th>
+        <td colspan="3"><select name="strongPoint" id="strongPointSelect"></select></td>
+      </tr>
+    </tbody>
+    <tbody class="familyHistory">
+      <tr>
+        <th colspan="9">Family <button id="addRowBtnFamily">Add row</button></th>
+      </tr>
+      <tr>
+        <th colspan="5">家族氏名 (Family composition)</th>
+        <th>続柄 (Relationship)</th>
+        <th>年生 (Year of birth)</th>
+        <th colspan="2">職業（Occupation）</th>
+
+      </tr>
+      <tbody id="dynamicTableFamily">
+        <tr>
+          <td colspan="5"><input type="text" size="40" class="familyName"></td>
+          <td><select class="relationship"></select></td>
+          <td><select class="birthYear"></select></td>
+          <td colspan="2"><input type="text" size="40" class="occupation"></td>
+        </tr>
+      </tbody>
+
+    </tbody>
+    <tbody class="qualifications">
+      <tr>
+        <th>年 (Year)</th>
+        <th>月 (Month)</th>
+        <th colspan="7">免許・資格 (Diplomas and certificates) <button>Add row</button></th>
+      </tr>
+      <tr>
+        <td><select name="" id=""></select></td>
+        <td><select name="" id=""></select></td>
+        <td colspan="7"><select name="" id=""></select></td>
+      </tr>
+    </tbody>
+    <tbody class="otherDetails">
+      <tr>
+        <th colspan="4">運転免許 (Driver’s License)</th>
+        <td colspan="2"><input style="margin-right: 7px; margin-top: 5px;" type="checkbox">バイク</td>
+        <td colspan="2"><input style="margin-right: 7px; margin-top: 5px;" type="checkbox">車</td>
+        <td colspan="1"><input style="margin-right: 7px; margin-top: 5px;" type="checkbox">その他</td>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="4">配偶者 (Married Staus):</th>
+        <td colspan="2">
+          <input style="margin-right: 7px; margin-top: 5px;" value="single" id="single" type="radio" name="maritalOptions" required>
+          <label for="single">未婚</label>
+        </td>
+
+        <td colspan="2">
+          <input style="margin-right: 7px; margin-top: 5px;" value="married" type="radio" name="maritalOptions" id="married" required>
+          <label for="married">既婚</label>
+          <div class="marriedWithChildrenHide " >
+            <input type="radio" value="children" name="childOption" id="children" required>
+            <label for="children">子供がいる</label>
+            <input type="radio" value="no-child" name="childOption" id="noChildren" required>
+            <label for="noChildren">子供がいない</label>
+          </div>
+        </td>
+        <td colspan="1"><input style="margin-right: 7px; margin-top: 5px;" value="divorced" type="radio"
+            name="maritalOptions">離婚</td>
+      </tr>
+      <!-- <tr>
+        <th colspan="4">配偶者の扶養義務 (Responsibility to nurture):</th>
+        <td colspan="4">　　バイク</td>
+        <td colspan="1">　　バイク</td>
+      </tr> -->
+    <tbody class="relativesInformation">
+      <tr>
+        <th colspan="4">在日親戚 (Relatives in Japan):</th>
+        <td colspan="4"><input style="margin-right: 7px; margin-top: 5px;" value="yes" type="radio" name="relativeInfoJapan">有
+        </td>
+        <td colspan="1"><input style="margin-right: 7px; margin-top: 5px;" value="no" type="radio" name="relativeInfoJapan">無</td>
+      </tr>
+      <tr class="relativesInJapanInformation">
+        <th colspan="2">氏名 (Full Name)</th>
+        <td colspan="4"><input type="text" size="35"></td>
+        <th colspan="1">住所 (Address):</th>
+        <td colspan="2"><input type="text" size="40"></td>
+      </tr>
+    </tbody>
+    </tbody>
+    <tbody class="physiology">
+      <tr>
+        <th colspan="3">裸眼視力 (Naked eye' Eyesight)</th>
+        <th colspan="3">血液型（Blood type）</th>
+        <th>身長（Height）</th>
+        <th>体重（Weigh）</th>
+        <th>利き手 <br>(Favourable hand）</th>
+      </tr>
+      <tr>
+        <td>左：1,5</td>
+        <td colspan="2">右：1,5</td>
+        <td colspan="3">0</td>
+        <td>158センチ</td>
+        <td>57キロ</td>
+        <td>右</td>
+      </tr>
+    </tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+<script src="https://unpkg.com/wanakana"></script>
+<script src="js-files/common.js"></script>
+<script src="js files/educationBg.js"></script>
+<script src="js-files/companyBg.js"></script>
+<script src="js-files/familyHistory.js"></script>
+<script src="js-files/details.js"></script>
+<script src="js-files/uploadPFP.js"></script>
+
+</html>
