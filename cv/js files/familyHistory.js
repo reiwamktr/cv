@@ -74,23 +74,28 @@ document.addEventListener("DOMContentLoaded", () => {
       occupation.innerHTML = "";
 
       const relationshipOptions = [
-
+        "",
+        "祖父 (Grandfather)",
+        "祖母 (Grandmother)",
+        "父 (Father)",
+        "母 (Mother)",
+        "息子 (Son)",
+        "娘 (Daughter)",
+        "兄 (Older Brother)",
+        "姉( Sister)",
+        "妹 (Younger Sister)",
+        "弟 (Younger Brother)",
+        "妻 (Wife)",
+        "夫 (Husband)",
       ]
+
+      relationshipOptions.forEach((optionText)=>{
+        const option = document.createElement("option")
+        option.value = optionText;
+        option.textContent = optionText;
+        relationship.appendChild(option);
+      });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
 
