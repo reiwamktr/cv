@@ -1,3 +1,5 @@
+import { populateMonth, populateYear } from "./monthAndYearPopulate.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const addRowBtn = document.getElementById("addRowBtn");
   const tableBody = document.getElementById("dynamicTableBody");
@@ -17,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
       tableBody.appendChild(newRow);
 
       // Populate newly added row with select options
+
+      populateMonth(newRow);
+        populateYear(newRow, 2007, 2025);
+        populateMonth(newRow);
       populateSelectOptions(newRow);
       rowCount++;
 
@@ -60,62 +66,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-   /*========================================================================
+  /*========================================================================
   Print function close here
   =========================================================================*/
 
   // Initial population of existing rows (if any)
   const existingRows = tableBody.querySelectorAll("tr");
   existingRows.forEach((row) => {
-    populateSelectOptions(row);
+    populateYear(row, 2007, 2025);
+        populateMonth(row);
+        populateSelectOptions(row)
   });
 
   // Function to populate select options for a specific row
   function populateSelectOptions(row) {
-    const yearSelect = row.querySelector(".yearSelect");
-    const monthSelect = row.querySelector(".monthSelect");
     const educationLevelSelect = row.querySelector(".educationLevelSelect");
     const facultySelect = row.querySelector(".facultySelect");
     const statusSelect = row.querySelector(".statusSelect");
 
     // Clear existing options
-    yearSelect.innerHTML = "";
-    monthSelect.innerHTML = "";
     educationLevelSelect.innerHTML = "";
     facultySelect.innerHTML = "";
     statusSelect.innerHTML = "";
-
-    // Add blank option to year select
-    const blankYearOption = document.createElement("option");
-    blankYearOption.value = "";
-    blankYearOption.textContent = "";
-    yearSelect.appendChild(blankYearOption);
-
-    // Populate year select options
-    const startYear = 2007;
-    const endYear = 2025;
-    for (let year = startYear; year <= endYear; year++) {
-      const option = document.createElement("option");
-      option.value = year;
-      option.textContent = year;
-      yearSelect.appendChild(option);
-    }
-
-    // Add blank option to month select
-    const blankMonthOption = document.createElement("option");
-    blankMonthOption.value = "";
-    blankMonthOption.textContent = "";
-    monthSelect.appendChild(blankMonthOption);
-
-    // Populate month select options
-    const startMonth = 1;
-    const endMonth = 12;
-    for (let month = startMonth; month <= endMonth; month++) {
-      const option = document.createElement("option");
-      option.value = month;
-      option.textContent = month;
-      monthSelect.appendChild(option);
-    }
 
     // Populate education level select options
     const educationOptions = [

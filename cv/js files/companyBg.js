@@ -1,3 +1,7 @@
+import {
+  populateMonth, populateYear
+} from "./monthAndYearPopulate.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const addRowBtn = document.getElementById("addRowBtnEmployer");
   const printBtn = document.getElementById("printBtn");
@@ -17,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       tableBody.appendChild(newRow);
 
+      populateYear(newRow, 2007, 2025);
+      populateMonth(newRow);
       populateSelectOptions(newRow);
+
       rowCount++;
 
       if (rowCount === 7) {
@@ -28,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const existingRows = tableBody.querySelectorAll("tr");
   existingRows.forEach((row) => {
+    populateYear(row, 2007, 2025);
+    populateMonth(row);
     populateSelectOptions(row);
   });
 
@@ -65,53 +74,49 @@ document.addEventListener("DOMContentLoaded", () => {
     window.print();
   });
 
-     /*========================================================================
+  /*========================================================================
   Print function close here
   =========================================================================*/
 
   function populateSelectOptions(row) {
-    const yearSelect = row.querySelector(".yearSelect");
-    const monthSelect = row.querySelector(".monthSelect");
     const workingSectorSelect = row.querySelector(".workingSectorSelect");
     const employerStatusSelect = row.querySelector(".employerStatusSelect");
 
     // Clearing existing form
-    yearSelect.innerHTML = "";
-    monthSelect.innerHTML = "";
     workingSectorSelect.innerHTML = "";
     employerStatusSelect.innerHTML = "";
 
-    // Adding blank space in the element
-    const blankYearOption = document.createElement("option");
-    blankYearOption.value = "";
-    blankYearOption.textContent = "";
-    yearSelect.appendChild(blankYearOption);
+    // // Adding blank space in the element
+    // const blankYearOption = document.createElement("option");
+    // blankYearOption.value = "";
+    // blankYearOption.textContent = "";
+    // yearSelect.appendChild(blankYearOption);
 
-    //populating selecting option with years
-    const startYear = 2007;
-    const endYear = 2025;
-    for (let year = startYear; year <= endYear; year++) {
-      const option = document.createElement("option");
-      option.value = year;
-      option.textContent = year;
-      yearSelect.appendChild(option);
-    }
+    // //populating selecting option with years
+    // const startYear = 2007;
+    // const endYear = 2025;
+    // for (let year = startYear; year <= endYear; year++) {
+    //   const option = document.createElement("option");
+    //   option.value = year;
+    //   option.textContent = year;
+    //   yearSelect.appendChild(option);
+    // }
 
-    // Add blank option to month select
-    const blankMonthOption = document.createElement("option");
-    blankMonthOption.value = "";
-    blankMonthOption.textContent = "";
-    monthSelect.appendChild(blankMonthOption);
+    // // Add blank option to month select
+    // const blankMonthOption = document.createElement("option");
+    // blankMonthOption.value = "";
+    // blankMonthOption.textContent = "";
+    // monthSelect.appendChild(blankMonthOption);
 
-    // Populate month select options
-    const startMonth = 1;
-    const endMonth = 12;
-    for (let month = startMonth; month <= endMonth; month++) {
-      const option = document.createElement("option");
-      option.value = month;
-      option.textContent = month;
-      monthSelect.appendChild(option);
-    }
+    // // Populate month select options
+    // const startMonth = 1;
+    // const endMonth = 12;
+    // for (let month = startMonth; month <= endMonth; month++) {
+    //   const option = document.createElement("option");
+    //   option.value = month;
+    //   option.textContent = month;
+    //   monthSelect.appendChild(option);
+    // }
 
     // Populate working sector options
     const workingSectorOptions = [

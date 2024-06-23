@@ -1,32 +1,31 @@
-const activate = () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    const nameInJapanese = document.getElementById("japaneseName");
-    // const nameInEnglish = document.getElementById('englishName');
-    const addressInJapanese = document.getElementById("addressJP");
-    // const addressInEnglish = document.getElementById('addressEnglish')
+import { populateYear } from "./monthAndYearPopulate.js";
 
-    wanakana.bind(nameInJapanese, { IMEMode: "toKatakana" });
-    wanakana.bind(addressInJapanese, { IMEMode: "toKatakana" });
+document.addEventListener("DOMContentLoaded", () => {
+  const nameInJapanese = document.getElementById("japaneseName");
+  // const nameInEnglish = document.getElementById('englishName');
+  const addressInJapanese = document.getElementById("addressJP");
+  // const addressInEnglish = document.getElementById('addressEnglish')
 
-    document.addEventListener("input", function (event) {
-      if (event.target.classList.contains("dynamicSizeInput")) {
-        const inputField = event.target;
-        const maxLength = 40;
-        const currentLength = inputField.value.length;
+  wanakana.bind(nameInJapanese, { IMEMode: "toKatakana" });
+  wanakana.bind(addressInJapanese, { IMEMode: "toKatakana" });
 
-        if (currentLength <= maxLength) {
-          inputField.setAttribute("size", inputField.value.length + 5);
-        }
+  document.addEventListener("input", function (event) {
+    if (event.target.classList.contains("dynamicSizeInput")) {
+      const inputField = event.target;
+      const maxLength = 40;
+      const currentLength = inputField.value.length;
+
+      if (currentLength <= maxLength) {
+        inputField.setAttribute("size", inputField.value.length + 5);
       }
-    });
+    }
   });
-};
+});
 
-activate();
-
+populateYear(document, 1985, 2007);
 const daySelect = document.getElementById("day");
 const monthSelect = document.getElementById("month");
-const yearSelect = document.getElementById("year");
+const yearSelect = document.querySelector(".yearSelect")
 
 // Function to populate days based on selected month and year
 function populateDays() {
@@ -54,14 +53,14 @@ function populateDays() {
   }
 }
 
-// Populate years options (adjust range as needed)
-const currentYear = new Date().getFullYear();
-for (let year = currentYear-17; year >= currentYear - 40; year--) {
-  const option = document.createElement("option");
-  option.value = year;
-  option.textContent = year;
-  yearSelect.appendChild(option);
-}
+// // Populate years options (adjust range as needed)
+// const currentYear = new Date().getFullYear();
+// for (let year = currentYear - 17; year >= currentYear - 40; year--) {
+//   const option = document.createElement("option");
+//   option.value = year;
+//   option.textContent = year;
+//   yearSelect.appendChild(option);
+// }
 
 // Initial population of days based on current month and year
 populateDays();
@@ -70,25 +69,14 @@ populateDays();
 monthSelect.addEventListener("change", populateDays);
 yearSelect.addEventListener("change", populateDays);
 
+const personAge = document.getElementById("age");
+let currentYear = new Date().getFullYear();
 
-const personAge = document.getElementById("age") 
-
-const findAge = ()=>{
+const findAge = () => {
   const selectedYear = parseInt(yearSelect.value);
-  if (selectedYear){
+  if (selectedYear) {
     const age = currentYear - selectedYear;
     personAge.innerHTML = age;
   }
-}
-yearSelect.addEventListener('change', findAge);
-
-
-
-
-
-
-
-
-
-
-
+};
+yearSelect.addEventListener("change", findAge);
