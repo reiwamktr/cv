@@ -116,7 +116,18 @@
       </tr>
       <tr>
         <th colspan="2">宗教 (Religion)</th>
-        <td colspan="3"><select name="" id=""></select></td>
+        <td colspan="3"><select name="religion" id="religion">
+          <option value="">ヒンズー教 (Hindu)
+          </option>
+          <option value="Buddhist">仏教 (Buddhist )
+          </option>
+          <option value="Islam">イスラム教 (Islam)
+          </option>
+          <option value="Christian">キリスト教 (Christian)
+          </option>
+          <option value="Others">その他 (Others)
+          </option>
+        </select></td>
         <th colspan="2">国籍 (nationality)</th>
         <td colspan="3">
           <label for="nepalese">Nepalese</label>
@@ -144,7 +155,7 @@
 
     <tbody class="educationDetails">
       <tr>
-        <th colspan="9">(学歴) Education background (Qualification) <button id="addRowBtn" class="no"> Add Row</button>
+        <th colspan="9">(学歴) Education background (Qualification) <button id="addRowBtnEducation" class="no"> Add Row</button>
         </th>
       </tr>
       <tr>
@@ -250,13 +261,15 @@
       <tr>
         <th>年 (Year)</th>
         <th>月 (Month)</th>
-        <th colspan="7">免許・資格 (Diplomas and certificates) <button>Add row</button></th>
+        <th colspan="7">免許・資格 (Diplomas and certificates) <button id = "addRowBtnCertificate">Add row</button></th>
       </tr>
-      <tr>
-        <td><select name="" id=""></select></td>
-        <td><select name="" id=""></select></td>
-        <td colspan="7"><select name="" id=""></select></td>
-      </tr>
+      <tbody id="tableBodyCertificate">
+        <tr>
+          <td><select name="" class="yearSelect"></select></td>
+          <td><select name="" class="monthSelect"></select></td>
+          <td colspan="7"><select name="" id="certificateSelect"></select></td>
+        </tr>
+      </tbody>
     </tbody>
     <tbody class="otherDetails">
       <tr>
@@ -334,15 +347,21 @@
       <td></td>
       <td></td>
     </tr>
+
+    <tr>
+      <td><select name="" class="yearSelect"></select></td>
+    </tr>
     </tbody>
   </table>
 </body>
 <script src="https://unpkg.com/wanakana"></script>
+<script type="module" src = "js-files/monthAndYearPopulate.js"></script>
 <script type="module" src="js-files/common.js"></script>
 <script type="module" src="js-files/educationBg.js"></script>
 <script type="module" src="js-files/companyBg.js"></script>
 <script type="module" src="js-files/familyHistory.js"></script>
 <script type="module" src="js-files/details.js"></script>
 <script type="module" src="js-files/personality.js"></script>
-<script src="js-files/uploadPFP.js"></script>
+<script type="module" src="js-files/diplomaAndCertificates.js"></script>
+<script type="module" src="js-files/uploadPFP.js"></script>
 </html>

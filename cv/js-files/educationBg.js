@@ -1,7 +1,7 @@
 import { populateMonth, populateYear } from "./monthAndYearPopulate.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const addRowBtn = document.getElementById("addRowBtn");
+  const addRowBtn = document.getElementById("addRowBtnEducation");
   const tableBody = document.getElementById("dynamicTableBody");
   let rowCount = 0;
 
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       populateMonth(newRow);
         populateYear(newRow, 2007, 2025);
-        populateMonth(newRow);
       populateSelectOptions(newRow);
       rowCount++;
 
@@ -141,4 +140,5 @@ document.addEventListener("DOMContentLoaded", () => {
       statusSelect.appendChild(option);
     });
   }
+
 });
