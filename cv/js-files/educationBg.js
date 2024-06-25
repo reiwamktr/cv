@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
         !statusSelect
       ) {
         row.classList.add("empty-row");
+
+        
       } else {
         row.classList.remove("empty-row");
       }

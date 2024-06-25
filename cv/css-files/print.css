@@ -24,6 +24,10 @@ input, textarea{
   appearance: none;
 }
 
+input[type="radio"]{
+  appearance: auto;
+}
+
 textarea{
   resize: none;
 }
@@ -43,6 +47,6 @@ select{
   display: none;
 }
 
-  tr.empty-row {
+.empty-row {
       display: none;
   }

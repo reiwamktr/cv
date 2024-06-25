@@ -6,7 +6,7 @@
 body {
   font-size: 12px;
   padding: 25px;
-  height: 95vh;
+  height: 80%;
 }
 
 table {
@@ -22,6 +22,17 @@ table {
   height: 20vh;
 }
 
+.checkboxContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.checkboxContainer> div{
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+  align-items: baseline;
+}
 
 
 .col-7 {
@@ -87,16 +98,20 @@ input {
   
 }
 
-textarea {
+textarea{
+  min-width: 211px;
+  min-height: 70px;
+
+}
+
+.personality textarea {
+  min-width: 455PX;
+  min-height: 70px;
   padding: 10px;
   resize: both;
   max-width: 455px;
-  min-width: 455PX;
   max-height: 130px;
-  min-height: 70px;
   overflow: hidden;
-
-
 }
 
 .printBtn {
