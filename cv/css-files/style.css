@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   font-size: 12px;
   padding: 25px;
@@ -16,6 +22,12 @@ table {
   text-align: center;
   border: 1px solid rgb(135, 135, 135);
   margin-bottom: 10px;;
+}
+.height{
+  display: inline;;
+}
+.heightInCm{
+  display: none;
 }
 
 .detailsTop{
@@ -31,7 +43,11 @@ table {
   display: flex;
   flex-direction: column;
   margin: 0 15px;
-  align-items: baseline;
+  align-items: flex-start;
+}
+
+.statusHide{
+  display: none;
 }
 
 
@@ -43,9 +59,21 @@ table {
   width: 20px;
 }
 
-input {
+input[type="text"] {
   padding: 3px;
+  cursor: text;
 }
+
+select,
+input[type="radio"]+label,
+input[type="radio"],
+input[type="checkbox"]+label,
+input[type="checkbox"]{
+  cursor: pointer;
+}
+
+
+
 
 #imageUploadBtn {
   display: none;
@@ -214,3 +242,27 @@ th:hover {
 .marriedWithChildrenHide{
   display: none;
 }
+
+.drivingLicense > div,
+.marriedStatus > div,
+.japanRelatives > div{
+  display: inline;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
+.drivingLicense > div label,
+ .marriedStatus > div label,
+ .japanRelatives > div label{
+
+  margin-left: -8px;
+}
+
+.drivingLicense,
+.japanRelatives{
+  text-align: start;
+  padding-left: 5% !important;
+}
+
+
+

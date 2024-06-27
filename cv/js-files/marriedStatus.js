@@ -13,10 +13,3 @@ radioButtons.forEach((radio)=>{
 })
 
 
-const relativesInJapan = document.querySelectorAll('input[name="relativeInfoJapan"]');
-
-relativesInJapan.forEach((radio)=>{
-  radio.addEventListener('change', ()=>{
-    
-  });
-});

@@ -1,52 +1,74 @@
-.printBtn{
+.printBtn {
   display: none;
 }
 
+.heightInCm {
+  display: inline;
+}
 
-td, th{
+
+td, th {
   padding: 0px;
   font-size: 15px;
   height: 10px;
 }
 
-tr{
+tr {
   border: 0.1px solid black;
 }
 
-button{
+button {
   display: none;
 }
 
-input, textarea{
+input, textarea {
   text-align: center;
   padding: 0;
   border: none;
   appearance: none;
 }
 
-input[type="radio"]{
+.requiredDetails input{
+  text-align:left;
+}
+
+
+input[type="radio"],
+.otherDetails input[type="checkbox"]  {
   appearance: auto;
 }
 
-textarea{
+textarea {
   resize: none;
 }
 
-input::placeholder{
+input::placeholder {
   opacity: 0;
 }
 
 
-select{
+select {
   text-align: center;
   border: none;
   appearance: none;
 }
 
-.no-printing{
+.no-printing {
   display: none;
 }
 
 .empty-row {
-      display: none;
-  }
+  display: none;
+}
+
+input[type="checkbox"]:not(:checked)+label,
+input[type="checkbox"]:not(:checked),
+input[type="radio"]:not(:checked) + label,
+input[type="radio"]:not(:checked) {
+  display: none;
+}
+
+.otherDetails{
+  text-align: start;
+}
+

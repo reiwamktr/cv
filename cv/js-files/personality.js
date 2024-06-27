@@ -2,6 +2,7 @@ const hobbySelect = document.getElementById("hobbySelect");
 const characterSelect = document.getElementById("characterSelect");
 
 const hobbyOptions = [
+	"",
   "読書 (Reading)",
   "音楽を聴くこと(Listening to music)",
   "映画を見ること(Watching movies)",
@@ -22,6 +23,7 @@ const hobbyOptions = [
 ];
 
 const characterOptions= [
+	"",
 	"やさしい (Kind)",
 	"しんせつ (Gentle)",
 	"あかるい (Bright )",

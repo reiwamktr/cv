@@ -1,0 +1,75 @@
+class= educationDetails
+  year = name: academic_year
+  month = name: academic_month
+  institution name = name: academy_name
+  education level = name: academic_level
+  Faculty= name: academic_faculty
+  status= name: academic_status
+
+class= employmentDetails
+  year = name: employment_year
+  month = name: employment_month
+  Company Name = name: employment_company
+  Working Sector = name: employment_sector
+  Status = name: employment_status
+
+class= personality
+  Hobby = name: hobby
+  Character = name: character
+
+
+class= familyHistory
+  Family composition = name: member_name
+  Relationship = name: relation
+  Occupation = name: member_occupation
+
+class= qualifications
+  year = name: qualification_year
+  month = name: qualification_month
+  certificate Name = name: qualification_name
+  Status = name: qualification_status
+
+class= otherDetails
+  Driver’s License = name: license
+  Married Staus = name: marital_status
+    children staus = name: child_status
+  class= relativesInformation
+    Relatives in Japan = name: relatives_status_japan
+    Full Name = name: relative_name
+    Address = name: relative_address
+
+class= physiology
+  visited japan = name: japan_living_status
+  Blood type =  name: blood_type
+  height = name: height_ft
+           name: height_in
+           name: height_cm
+  weight = name: weight
+  allergy = name: allergy_status
+  What you can't eat = name: restrict_eating
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
