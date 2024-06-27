@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-populateYear(document, 1985, 2007);
+populateYear(document, 1980, 2025);
 const daySelect = document.getElementById("day");
 const monthSelect = document.getElementById("month");
 const yearSelect = document.querySelector(".yearSelect")
@@ -37,7 +37,7 @@ function populateDays() {
   const selectedDay = daySelect.value;
 
   // Clear current options
-  daySelect.innerHTML = '<option value="" disabled selected hidden>1</option>';
+  daySelect.innerHTML = '<option value="" disabled selected hidden></option>';
 
   // Generate options for days
   for (let day = 1; day <= daysInMonth; day++) {
@@ -53,14 +53,6 @@ function populateDays() {
   }
 }
 
-// // Populate years options (adjust range as needed)
-// const currentYear = new Date().getFullYear();
-// for (let year = currentYear - 17; year >= currentYear - 40; year--) {
-//   const option = document.createElement("option");
-//   option.value = year;
-//   option.textContent = year;
-//   yearSelect.appendChild(option);
-// }
 
 // Initial population of days based on current month and year
 populateDays();

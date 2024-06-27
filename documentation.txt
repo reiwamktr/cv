@@ -1,3 +1,10 @@
+class personalDetails
+  year = name: dob_year
+  month = : name: dob_month
+  day = : name: dob_day
+
+
+
 class= educationDetails
   year = name: academic_year
   month = name: academic_month
