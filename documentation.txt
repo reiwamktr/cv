@@ -1,8 +1,25 @@
 class personalDetails
+  full name = name: full_name_english
+  name-katakana ="full_name_katakana"
   year = name: dob_year
   month = : name: dob_month
   day = : name: dob_day
+  address-katakana = name: address_katakana
+  address-english = name: address_english
+  age = name: age
+  gender = name: gender
 
+
+class= japaneseDetails
+  Language Proficiency =  name: language_proficiency
+  current residence = name: current_residence
+
+
+class = requiredDetails
+  email =  name: email
+  phone = name: phone_no
+  religion = name: religion
+  natioonality = name: nationality
 
 
 class= educationDetails
@@ -23,6 +40,7 @@ class= employmentDetails
 class= personality
   Hobby = name: hobby
   Character = name: character
+  purpose = name: purpose;
 
 
 class= familyHistory
