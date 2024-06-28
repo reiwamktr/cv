@@ -17,7 +17,7 @@ class= japaneseDetails
 
 class = requiredDetails
   email =  name: email
-  phone = name: phone_no
+  phone = name: phone_no 
   religion = name: religion
   natioonality = name: nationality
 

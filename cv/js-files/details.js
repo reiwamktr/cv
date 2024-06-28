@@ -86,16 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial update on page load
   updateAge();
 
-  const phoneNoBox = document.getElementById("phoneNoBox");
-  const countryCode = document.getElementById("country_code").value;
-  const phoneNumber = document.getElementById('phone_input').value;
+  //Combined phone no send data
+
+  const phoneNo = document.getElementById("phone_no");
+  const countryCode = document.getElementById("country_code");
+  const phoneInput = document.getElementById("phone_input");
   
 
-  const combinedPhone = countryCode + phoneNumber;
+  const combinedNumber = countryCode.value + " " + phoneInput.value;
+  
+  phoneNo.value = combinedNumber;
 
-  const hiddenInput = document.createElement('input')
-  hiddenInput.type = 'hidden';
-  hiddenInput.name = 'phone_no';
-  hiddenInput.value = combinedPhone;
-  phoneNoBox.appendChild(hiddenInput);
+  countryCode.value= "";
+  phoneInput.removeAttribute('name');
+
 });
