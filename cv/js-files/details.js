@@ -88,16 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Combined phone no send data
 
+  document.getElementById("myForm").addEventListener('submit', function(){
   const phoneNo = document.getElementById("phone_no");
   const countryCode = document.getElementById("country_code");
   const phoneInput = document.getElementById("phone_input");
   
 
-  const combinedNumber = countryCode.value + " " + phoneInput.value;
+  const combinedNumber = countryCode.value + phoneInput.value;
   
   phoneNo.value = combinedNumber;
 
-  countryCode.value= "";
+  countryCode.removeAttribute('name');
   phoneInput.removeAttribute('name');
+});
 
 });

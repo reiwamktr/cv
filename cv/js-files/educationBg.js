@@ -112,6 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.getElementById('myForm').addEventListener('submit', ()=>{
+    const educationDate = document.getElementById('educationDate');
+    const educationYear = document.getElementById('educationYear')
+    const educationMonth = document.getElementById('educationMonth')
+
+    const consolidatedDate = `${educationYear.value} - ${educationMonth.value}`;
+
+    educationDate.value = consolidatedDate;
+    educationYear.removeAttribute('name');
+    educationMonth.removeAttribute('name');
+
+  });
+
   /*========================================================================
   Print function starts here
   =========================================================================*/

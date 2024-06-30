@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById("maritalForm").addEventListener("submit", function(e) {
+  document.getElementById("myForm").addEventListener("submit", function(e) {
     const maritalRadios = document.querySelectorAll('input[name="marital_status"]');
     let maritalStatus = '';
 

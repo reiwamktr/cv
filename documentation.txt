@@ -90,16 +90,17 @@ missiing in form data
 
 
 http://127.0.0.1:5500/cv/cv-form.html?full_name_katakana=%E3%83%8B%E3%83%A9%E3%82%B8%E3%83%A3%E3%83%B3&full_name_english=Nirajan+Thapaliya
-&dob_year=1991&dob_month=6
-&dob_day=9
+&dob_year=1991&dob_month=6  
+&dob_day=9   -->consolidated
 &address_katakana=%E3%83%8C%E3%83%AF%E3%82%B3%E3%82%BF
 &address_english=Nuwakot
 &age=33
-&gender=%E7%94%B7&language_proficiency=japanese&language_proficiency=english
+&gender=%E7%94%B7&language_proficiency=japanese
+&language_proficiency=english
 &language_proficiency=hindi&language_proficiency=korean
 &language_proficiency=others&current_residence=japan
 &email=neerajanthapaliya01%40gmail.com
-&country_code=%2B977
+&country_code=%2B977  ----> solved
 &phone_no=%2B977+
 &religion=Buddhist
 &nationality=nepalese
@@ -110,13 +111,13 @@ http://127.0.0.1:5500/cv/cv-form.html?full_name_katakana=%E3%83%8B%E3%83%A9%E3%8
 &academic_faculty=education
 &academic_status=enrolled
 
-&academic_year=1996
+&academic_year=1996 --->consolidated
 &academic_month=march
 &academy_name=Takshashila&academic_level=Junior_high_school
 &academic_faculty=education
 &academic_status=graduated
 
-&academic_year=2005
+&academic_year=2005  --->consolidated
 &academic_month=may&academy_name=Trichandra&academic_level=High_school
 &academic_faculty=science
 &academic_status=dropped_out
@@ -140,12 +141,12 @@ http://127.0.0.1:5500/cv/cv-form.html?full_name_katakana=%E3%83%8B%E3%83%A9%E3%8
 &member_name=Niraj+Thapaliya&relation=older_brother&member_occupation=Romania+pizzerie
 
 &qualification_year=2009
-&qualification_month=4&qualification_name=%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%83%BD%E5%8A%9B%E8%A9%A6%E9%A8%93N5+%28Japanese+Language+Proficiency+Test+N5%29&
+&qualification_month=4&qualification_name=%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%83%BD%E5%8A%9B%E8%A9%A6%E9%A8%93N5+%28Japanese+Language+Proficiency+Test+N5%29&   --->solved
 
 qualification_status=%E5%90%88%E6%A0%BC+%28Passed%29
 
-&license=bike&license=car&license=others
-&marital_status=married
+&license=bike&license=car&license=others  ---> solved
+&marital_status=married   ---> solved
 &child_status=have_child   ---> solved
 
 &relatives_status_japan=yes
@@ -153,7 +154,7 @@ qualification_status=%E5%90%88%E6%A0%BC+%28Passed%29
 &japan_living_status=on
 
 &blood_type=O
-&height_ft=5&height_in=8
+&height_ft=5&height_in=8   ---> solved
 &weight=50
 &allergy_status=yes
 &restrict_eating=I+don%27t+wat+anything

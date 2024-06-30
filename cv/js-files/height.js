@@ -1,27 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  printBtn = document.getElementById('printBtn');
-  printBtn.addEventListener('click', ()=>{
-    const heightFt = parseInt(document.getElementById('heightFt').value);
-    const heightIn = parseInt(document.getElementById('heightIn').value);
+  printBtn = document.getElementById("printBtn");
+  printBtn.addEventListener("click", () => {
+    const heightFt = document.getElementById("heightFt");
 
-    const heightTd = document.getElementById('heightTd')
-    const totalHeight = Math.round(((heightFt * 12)  + heightIn)*2.54);
+    const heightIn = document.getElementById("heightIn");
 
-    let height_cm = document.querySelector('.heightInCm');
+    const heightTd = document.getElementById("heightTd");
+    const totalHeight = Math.round(
+      parseInt(heightFt.value) * 30.48 + parseInt(heightIn.value) * 2.54
+    );
 
-    if (height_cm) {
-      heightInCm.innerHTML = `${totalHeight} センチ`; // Update existing element
-    } else {
-      const height_cm = document.createElement('div');
-      height_cm.classList.add('heightInCm');
-      height_cm.innerHTML = `${totalHeight} センチ`;
-      heightTd.appendChild(height_cm)
-    }
+    const height_cm = document.createElement("div");
+    height_cm.classList.add("heightInCm");
+    height_cm.innerHTML = `${totalHeight} センチ`;
+    heightTd.appendChild(height_cm);
 
-    const formData = {
-      height_cm: totalHeight
-    };
-
+    document.getElementById("totalHeightInCm").value = totalHeight;
+    heightFt.value = "";
+    heightIn.value = "";
   });
-
 });
