@@ -122,14 +122,14 @@ http://127.0.0.1:5500/cv/cv-form.html?full_name_katakana=%E3%83%8B%E3%83%A9%E3%8
 &academic_faculty=science
 &academic_status=dropped_out
 
-&academic_year=1996
+&academic_year=1996   --->consolidated
 &academic_month=july
 &academy_name=TU
 &academic_level=Vocational_school
 &academic_faculty=law
 &academic_status=expected_to_graduate
 
-&employment_year=1996
+&employment_year=1996   --->consolidated
 &employment_month=april&employment_company=unicampus&employment_sector=cooking&employment_status=joined&employment_year=1997&employment_month=june&employment_company=Fss&employment_sector=driver&employment_status=left&employment_year=2008&employment_month=march&employment_company=Reiwa&employment_sector=education&employment_status=to_present
 
 &hobby=cooking
@@ -140,7 +140,7 @@ http://127.0.0.1:5500/cv/cv-form.html?full_name_katakana=%E3%83%8B%E3%83%A9%E3%8
 &member_name=Kabita+thapaliya&relation=mother&member_occupation=BusineesWomen
 &member_name=Niraj+Thapaliya&relation=older_brother&member_occupation=Romania+pizzerie
 
-&qualification_year=2009
+&qualification_year=2009   --->consolidated
 &qualification_month=4&qualification_name=%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%83%BD%E5%8A%9B%E8%A9%A6%E9%A8%93N5+%28Japanese+Language+Proficiency+Test+N5%29&   --->solved
 
 qualification_status=%E5%90%88%E6%A0%BC+%28Passed%29
@@ -158,6 +158,26 @@ qualification_status=%E5%90%88%E6%A0%BC+%28Passed%29
 &weight=50
 &allergy_status=yes
 &restrict_eating=I+don%27t+wat+anything
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://127.0.0.1:5500/cv/cv-form.html?full_name_katakana=%E3%83%8B%E3%83%A9%E3%82%B8%E3%83%A3%E3%83%B3&full_name_english=nirajan+thapaliya&date_of_birth=1981+-+2+-+3&address_katakana=%E3%83%8C%E3%83%AF%E3%82%B3%E3%82%BF+&address_english=nuwakot&age=43&gender=%E5%A5%B3&language_proficiency=japanese&language_proficiency=english&language_proficiency=hindi&language_proficiency=korean&language_proficiency=others&current_residence=japan&email=admin%40gmail.com&phone_no=%2B9779840468725&religion=Buddhist&nationality=nepalese&date=1997+-+3&academy_name=A&academic_level=Junior_high_school&academic_faculty=education&academic_status=graduated&academic_year=1997&academic_month=april&academy_name=B&academic_level=Junior_high_school&academic_faculty=agriculture&academic_status=expected_to_graduate&academic_year=2010&academic_month=may&academy_name=C&academic_level=High_school&academic_faculty=engineering&academic_status=enrolled&academic_year=&academic_month=&academy_name=&academic_level=&academic_faculty=&academic_status=&academic_year=&academic_month=&academy_name=&academic_level=&academic_faculty=&academic_status=&date=1998+-+4&employment_company=D&employment_sector=cooking&employment_status=left&employment_year=1998&employment_month=may&employment_company=E&employment_sector=office_worker&employment_status=joined&employment_year=1998&employment_month=april&employment_company=F&employment_sector=driver&employment_status=to_present&employment_year=&employment_month=&employment_company=&employment_sector=&employment_status=&employment_year=&employment_month=&employment_company=&employment_sector=&employment_status=&hobby=cooking&purpose=Hello+this+is+nirajan&character=calm&member_name=ram+chandra+thapaliya&relation=grandmother&member_occupation=farmner&member_name=nisha+thapaliya&relation=grandmother&member_occupation=busineewomen&member_name=&relation=&member_occupation=&member_name=&relation=&member_occupation=&date=2023+-+3&qualification_name=%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%83%BD%E5%8A%9B%E8%A9%A6%E9%A8%93N4+%28Japanese+Language+Proficiency+Test+N4%29&qualification_status=%E5%90%88%E6%A0%BC+%28Passed%29&bike_license=yes&car_license=yes&others=truck&marital_status=single&relatives_status_japan=yes&relative_name=Sakura&relative_address=Suzuki&japan_living_status=on&blood_type=O&height=NaN&weight=60&allergy_status=yes&restrict_eating=No+thing+I+wat
 
 
 

@@ -84,6 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.getElementById('myForm').addEventListener('submit', (e)=>{
+    const certificateDate = document.getElementById('certificateDate');
+    const certificateYear = document.getElementById('certificateYear')
+    const certificateMonth = document.getElementById('certificateMonth')
+
+    const consolidatedDate = `${certificateYear.value} - ${certificateMonth.value}`;
+
+    certificateDate.value = consolidatedDate;
+    certificateYear.removeAttribute('name');
+    certificateMonth.removeAttribute('name');
+
+  });
+
   //printing part
   printBtn.addEventListener("click", () => {
     const rows = tableBodyCertificate.querySelectorAll("tr");
