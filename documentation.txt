@@ -74,6 +74,110 @@ class= physiology
   What you can't eat = name: restrict_eating
   
 
+missiing in form data
+  age
+  language Profieiency
+  nationality
+  driving license
+  married status
+  visited japan
+  allergy
+
+  character amd purpose need to chenge place
+
+
+
+
+
+  http://127.0.0.1:5500/cv/cv-form.html?
+  full_name_katakana=
+  &full_name_english=
+  &dob_year=
+  &dob_month=
+  &address_katakana=
+  &address_english=
+
+  &gender=
+
+  &current_residence=
+  &email=
+  &phone_no=%2B977+
+  &religion=
+
+
+  &academic_year=
+  &academic_month=
+  &academy_name=
+  &academic_level=
+  &academic_faculty=
+  &academic_status=
+
+  &academic_year=
+  &academic_month=
+  &academy_name=
+  &academic_level=
+  &academic_faculty=
+  &academic_status=
+
+  &academic_year=
+  &academic_month=
+  &academy_name=
+  &academic_level=
+  &academic_faculty=
+  &academic_status=
+
+  &academic_year=
+  &academic_month=
+  &academy_name=
+  &academic_level=
+  &academic_faculty=
+  &academic_status=
+
+  &academic_year=
+  &academic_month=
+  &academy_name=
+  &academic_level=
+  &academic_faculty=
+  &academic_status=
+
+  &employment_year=
+  &employment_month=
+  &employment_company=
+  &employment_sector=
+  &employment_status=
+
+  &employment_year=
+  &employment_month=
+  &employment_company=
+  &employment_sector=
+  &employment_status=
+
+  &hobby=
+  &character=
+  &purpose=
+  
+  &member_name=
+  &relation=
+  &member_occupation=
+
+
+  &qualification_year=
+  &qualification_month=
+  &qualification_name=
+  &qualification_status=
+
+
+
+  &relative_name=
+  &relative_address=
+
+
+  &blood_type=
+  &height_ft=4
+  &height_in=0
+  &weight=
+  &restrict_eating=
+
 
 
 
