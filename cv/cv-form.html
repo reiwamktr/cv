@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form action="">
+  <form action="" id="maritalForm">
     <button class="printBtn" id="printBtn">Print this page</button>
 
     <!-- personal details table started -->
@@ -175,8 +175,8 @@
             <input id="addressEnglish" class="" placeholder="english मा लेख्नुहोस् " type="text" name="address_english">
           </td>
           <td id="age">
-            <span id="ageDisplay">
-              <input type="hidden" id="ageInput" name="age">
+            <span id="ageDisplay"></span>
+            <input type="hidden" id="ageInput" name="age">
           </td>
           <td><select id="gender" name="gender">
               <option name=""></option>
@@ -763,25 +763,22 @@
           <td colspan="5" class="marriedStatus">
             <div>
               <div style="display: inline-block; margin-right: 20px;">
-                <input style="margin-right: 7px; margin-top: 5px;" value="single" id="single" type="radio"
-                  name="marital_status">
+                <input style="margin-right: 7px; margin-top: 5px;" value="single" id="single" type="radio" name="marital_status">
                 <label for="single">未婚 (Single)</label>
               </div>
-
+  
               <div class="married" style="display: inline-block; margin-right: 20px;">
-                <input style="margin-right: 7px; margin-top: 5px;" value="married" type="radio" name="marital_status"
-                  id="married">
+                <input style="margin-right: 7px; margin-top: 5px;" value="married" type="radio" name="marital_status" id="married">
                 <label for="married">既婚 (Married)</label>
                 <div class="childrenStatus" style="margin-top: 5px; display: none;">
-                  <input type="radio" name="child_status" value="have_child" id="children">
+                  <input type="radio" value="yes" id="children">
                   <label for="children">子供がいる</label>
-                  <input type="radio" name="child_status" value="no_child" id="noChildren">
+                  <input type="radio" value="no" id="noChildren">
                   <label for="noChildren">子供がいない</label>
                 </div>
               </div>
               <div style="display: inline-block;">
-                <input style="margin-right: 7px; margin-top: 5px;" value="divorced" type="radio" name="marital_status"
-                  id="divorced">
+                <input style="margin-right: 7px; margin-top: 5px;" value="divorced" type="radio" name="marital_status" id="divorced">
                 <label for="divorced">離婚 (Divorced)</label>
               </div>
             </div>
