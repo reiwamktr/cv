@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rowCount < 7) {
       const newRow = document.createElement("tr");
       newRow.innerHTML = `
-              <td>
+                        <td>
             <select name="academic_year" class="yearSelect" id="educationYear">
               <option value=""></option>
               <option value="1995">1995</option>
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <option value="12">December</option>
             </select>
           </td>
-          <input type="hidden" name="date" id="educationDate">
+          <input type="hidden" name="date" class="educationDate">
           <td colspan="4">
             <input type="text"  class="dynamicSizeInput" name="academy_name">
           </td>
@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
               <option value="nursing">看護学部 (Nursing)</option>
               <option value="anm">看護助手 (ANM)</option>
               <option value="others">その他 (Others)</option>
-
             </select>
           </td>
           <td colspan="1">
@@ -113,19 +112,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.getElementById('myForm').addEventListener('submit', ()=>{
-    const educationDate = document.getElementById('educationDate');
-    const educationYear = document.getElementById('educationYear')
-    const educationMonth = document.getElementById('educationMonth')
+document.getElementById('myForm').addEventListener('submit', (event) => {
+  console.log("row");
+    // Process education details
+    document.querySelectorAll('.educationDetails tr').forEach(row => {
+      const educationYear = row.querySelector('.yearSelect');
+      const educationMonth = row.querySelector('.monthSelect');
+      const educationDate = row.querySelector('.educationDate');
 
-    const consolidatedDate = `${educationYear.value} - ${educationMonth.value}`;
-
-    educationDate.value = consolidatedDate;
-    educationYear.removeAttribute('name');
-    educationMonth.removeAttribute('name');
-
+      if (educationYear && educationMonth && educationDate) {
+          const consolidatedDate = `${educationYear.value} - ${educationMonth.value}`;
+          educationDate.value = consolidatedDate;
+          educationYear.removeAttribute('name');
+          educationMonth.removeAttribute('name');
+      }
+    });
   });
-
   /*========================================================================
   Print function starts here
   =========================================================================*/
@@ -160,8 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
+});
   /*========================================================================
   Print function close here
   =========================================================================*/
-});

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rowCount < 7) {
       const newRow = document.createElement("tr");
       newRow.innerHTML = `
-                <td>
+              <td>
             <select name="employment_year" class="yearSelect" id="employmentYear">
               <option value=""></option>
               <option value="1995">1995</option>
@@ -124,6 +124,29 @@ document.addEventListener("DOMContentLoaded", () => {
           <td style="padding: 10px;" colspan="4" rowspan="3">
             <textarea rows="4" cols="40" class id="purpose" name="purpose"></textarea>
           </td>
+        </tr>
+        <tr>
+          <th colspan="2">性格 (Character)</th>
+          <td colspan="3">
+            <select name="character" id="characterSelect">
+              <option value=""></option>
+              <option value="kind">やさしい (Kind)</option>
+              <option value="gentle">しんせつ (Gentle)</option>
+              <option value="bright">あかるい (Bright)</option>
+              <option value="earnest">まじめ (Earnest)</option>
+              <option value="energistic">せっきょくてき (Energistic)</option>
+              <option value="neat">きちょうめん (Neat)</option>
+              <option value="polite">れいぎただしい (Polite)</option>
+              <option value="hardworking">がんばりや (Hardworking)</option>
+              <option value="cheerful">ほがらか (Cheerful)</option>
+              <option value="sociable">しゃこうてき (Sociable)</option>
+              <option value="trustworthy">しんらいできる (Trustworthy)</option>
+              <option value="curious">こうきしんおうせい (Curious)</option>
+              <option value="responsible">せきにんかんがつよい (Responsible)</option>
+              <option value="calm">れいせい (Calm)</option>
+              <option value="serious">しんけん (Serious)</option>
+            </select>
+          </td>
             `;
 
       tableBody.appendChild(newRow);
@@ -136,18 +159,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById('myForm').addEventListener('submit', ()=>{
-    const employmentDate = document.getElementById('employmentDate');
-    const employmentYear = document.getElementById('employmentYear')
-    const employmentMonth = document.getElementById('employmentMonth')
 
-    const consolidatedDate = `${employmentYear.value} - ${employmentMonth.value}`;
-
-    employmentDate.value = consolidatedDate;
-    employmentYear.removeAttribute('name');
-    employmentMonth.removeAttribute('name');
-
+    document.querySelectorAll('.employmentDetails tr').forEach(row=>{
+      const employmentDate = row.getElementById('employmentDate');
+      const employmentYear = row.getElementById('employmentYear')
+      const employmentMonth = row.getElementById('employmentMonth')
+      if (employmentDate && employmentYear && employmentMonth){
+        const consolidatedDate = `${employmentYear.value} - ${employmentMonth.value}`;
+        employmentDate.value = consolidatedDate;
+        employmentYear.removeAttribute('name');
+        employmentMonth.removeAttribute('name');
+      }
+    });
   });
-
 
  
   /*========================================================================
