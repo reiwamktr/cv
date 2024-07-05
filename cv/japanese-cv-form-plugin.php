@@ -21,10 +21,21 @@ function test_form_plugin_activate()
     $charset_collate = $wpdb->get_charset_collate();
     $sql = "CREATE TABLE $table_name (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
-        name tinytext NOT NULL,
+        full_name_katakana tinytext NOT NULL,
+        full_name_english tinytext NOT NULL,
+        date_of_birth DATE NOT NULL,
+        address_katakana text NOT NULL,
+        address_english text NOT NULL,
+        age tinytext NOT NULL,
+        gender tinytext NOT NULL,
+        language_proficiency tinytext NOT NULL,
+        current_residence tinytext NOT NULL,
         email text NOT NULL,
-        phone text NOT NULL,
-        message text NOT NULL,
+        phone_no VARCHAR(20) NOT NULL,
+        religion tinytext NOT NULL,
+        nationality tinytext NOT NULL,
+
+        
         PRIMARY KEY  (id)
     ) $charset_collate;";
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
