@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const addRowBtn = document.getElementById("addRowBtnEmployer");
   const printBtn = document.getElementById("printBtn");
   const tableBody = document.getElementById("dynamicTableEmployer");
-  let rowCount = 0;
+  let rowCount = 1;
 
   addRowBtn.addEventListener("click", () => {
-    if (rowCount < 7) {
+    if (rowCount < 8) {
       const newRow = document.createElement("tr");
       newRow.innerHTML = `
               <td>
-            <select name="employment_year" class="yearSelect" id="employmentYear">
+            <select name="employment_year_${rowCount}" class="yearSelect" id="employmentYear">
               <option value=""></option>
               <option value="1995">1995</option>
               <option value="1996">1996</option>
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </select>
           </td>
           <td>
-            <select name="employment_month" class="monthSelect" id="employmentMonth">
+            <select name="employment_month_${rowCount}" class="monthSelect" id="employmentMonth">
               <option value=""></option>
               <option value="1">January</option>
               <option value="2">February</option>
@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
           </td>
           <input type="hidden" name="date" id="employmentDate">
           <td colspan="4">
-            <input type="text" name="employment_company" class="dynamicSizeInput">
+            <input type="text" name="employment_company_${rowCount}" class="dynamicSizeInput">
           </td>
           <td colspan="2">
-            <select name="employment_sector" class="workingSectorSelect">
+            <select name="employment_sector_${rowCount}" class="workingSectorSelect">
               <option value=""></option>
               <option value="agriculture">農業 (Agriculture)</option>
               <option value="customer_service">接客 (Customer Service)</option>
@@ -79,72 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
             </select>
           </td>
           <td colspan="2">
-            <select name="employment_status" class="employerStatusSelect">
+            <select name="employment_status_${rowCount}" class="employerStatusSelect">
               <option value=""></option>
               <option value="joined">入社 (Joined the company)</option>
               <option value="left">退社 (Left the company)</option>
               <option value="to_present">現在に至る (To present)</option>
-            </select>
-          </td>
-        </tr>
-      </tbody>
-      </tbody>
-      <!-- work experience ends here -->
-
-      <!-- personality started -->
-      <tbody class="personality">
-        <tr>
-          <th colspan="5">趣味・性格・長短・得意科目 (Preference・Personality・Favorite subjects)</th>
-          <th colspan="4">志望動機 (Purpose)</th>
-        </tr>
-        <tr>
-          <th colspan="2">趣味 (Hobby)</th>
-          <td colspan="3">
-            <select name="hobby" id="hobbySelect">
-              <option value=""></option>
-              <option value="reading">読書 (Reading)</option>
-              <option value="listening_to_music">音楽を聴くこと (Listening to music)</option>
-              <option value="watching_movies">映画を見ること (Watching movies)</option>
-              <option value="singing">歌を歌うこと (Singing)</option>
-              <option value="cooking">料理を作ること (Cooking)</option>
-              <option value="jogging">ジョギング (Jogging)</option>
-              <option value="cycling">サイクリング (Cycling)</option>
-              <option value="gardening">ガーデニング (Gardening)</option>
-              <option value="photography">写真を撮ること (Photography)</option>
-              <option value="travelling">旅行 (Travelling)</option>
-              <option value="hiking">ハイキング (Hiking)</option>
-              <option value="fitness">フィットネス (Fitness)</option>
-              <option value="crafts">手芸 (Crafts)</option>
-              <option value="fishing">釣り (Fishing)</option>
-              <option value="drawing">ドローイング (Drawing)</option>
-              <option value="playing_guitar">ギターを弾く (Playing guitar)</option>
-              <option value="dancing">ダンス (Dancing)</option>
-            </select>
-          </td>
-          <td style="padding: 10px;" colspan="4" rowspan="3">
-            <textarea rows="4" cols="40" class id="purpose" name="purpose"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <th colspan="2">性格 (Character)</th>
-          <td colspan="3">
-            <select name="character" id="characterSelect">
-              <option value=""></option>
-              <option value="kind">やさしい (Kind)</option>
-              <option value="gentle">しんせつ (Gentle)</option>
-              <option value="bright">あかるい (Bright)</option>
-              <option value="earnest">まじめ (Earnest)</option>
-              <option value="energistic">せっきょくてき (Energistic)</option>
-              <option value="neat">きちょうめん (Neat)</option>
-              <option value="polite">れいぎただしい (Polite)</option>
-              <option value="hardworking">がんばりや (Hardworking)</option>
-              <option value="cheerful">ほがらか (Cheerful)</option>
-              <option value="sociable">しゃこうてき (Sociable)</option>
-              <option value="trustworthy">しんらいできる (Trustworthy)</option>
-              <option value="curious">こうきしんおうせい (Curious)</option>
-              <option value="responsible">せきにんかんがつよい (Responsible)</option>
-              <option value="calm">れいせい (Calm)</option>
-              <option value="serious">しんけん (Serious)</option>
             </select>
           </td>
             `;
@@ -152,26 +91,36 @@ document.addEventListener("DOMContentLoaded", () => {
       tableBody.appendChild(newRow);
       rowCount++;
 
-      if (rowCount === 7) {
+      if (rowCount === 8) {
         addRowBtn.disabled = true;
       }
     }
   });
 
-  document.getElementById('myForm').addEventListener('submit', ()=>{
-
-    document.querySelectorAll('.employmentDetails tr').forEach(row=>{
-      const employmentDate = row.getElementById('employmentDate');
-      const employmentYear = row.getElementById('employmentYear')
-      const employmentMonth = row.getElementById('employmentMonth')
-      if (employmentDate && employmentYear && employmentMonth){
+  document.getElementById('myForm').addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent default form submission
+  
+    // Iterate through each row in employment details
+    document.querySelectorAll('.employmentDetails tr').forEach(row => {
+      const employmentYear = row.querySelector('.yearSelect');
+      const employmentMonth = row.querySelector('.monthSelect');
+      const employmentDate = row.querySelector('.employmentDate');
+  
+      // Check if all required elements are found
+      if (employmentDate && employmentYear && employmentMonth) {
         const consolidatedDate = `${employmentYear.value} - ${employmentMonth.value}`;
         employmentDate.value = consolidatedDate;
-        employmentYear.removeAttribute('name');
-        employmentMonth.removeAttribute('name');
+        employmentYear.removeAttribute('name'); // Remove name attribute to prevent duplicate data in for m submission
+        employmentMonth.removeAttribute('name'); // Remove name attribute to prevent duplicate data in form submission
+      } else {
+        console.error("Error: Missing one or more elements in employment details row");
       }
     });
+  
+    // Now you can submit the form programmatically if needed
+    // e.target.submit(); // Uncomment this line if you want to submit the form programmatically
   });
+  
 
  
   /*========================================================================

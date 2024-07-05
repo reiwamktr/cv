@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const addRowBtn = document.getElementById("addRowBtnEducation");
   const tableBody = document.getElementById("dynamicTableBody");
-  let rowCount = 0;
-
+  let rowCount = 1;
+  
   addRowBtn.addEventListener("click", () => {
-    if (rowCount < 7) {
+    if (rowCount < 8) {
       const newRow = document.createElement("tr");
       newRow.innerHTML = `
                         <td>
-            <select name="academic_year" class="yearSelect" id="educationYear">
+            <select name="academic_year_${rowCount}" class="yearSelect" id="educationYear">
               <option value=""></option>
               <option value="1995">1995</option>
               <option value="1996">1996</option>
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </select>
           </td>
           <td>
-            <select name="academic_month" class="monthSelect" id="educationMonth">
+            <select name="academic_month_${rowCount}" class="monthSelect" id="educationMonth">
               <option value=""></option>
               <option value="1">January</option>
               <option value="2">February</option>
@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
           </td>
           <input type="hidden" name="date" class="educationDate">
           <td colspan="4">
-            <input type="text"  class="dynamicSizeInput" name="academy_name">
+            <input type="text"  class="dynamicSizeInput" name="academy_name_${rowCount}">
           </td>
           <td colspan="1">
-            <select name="academic_level" class="educationLevelSelect">
+            <select name="academic_level_${rowCount}" class="educationLevelSelect">
               <option value=""></option>
               <option value="Elementary_school">小学校 (Elementary school)</option>
               <option value="Junior_high_school">中学 (Junior high school)</option>
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </select>
           </td>
           <td colspan="1">
-            <select name="academic_faculty" class="facultySelect">
+            <select name="academic_faculty_${rowCount}" class="facultySelect">
               <option value=""></option>
               <option value="management">経営学部 (Management)</option>
               <option value="education">教育学 (Education)</option>
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </select>
           </td>
           <td colspan="1">
-            <select name="academic_status" class="statusSelect">
+            <select name="academic_status_${rowCount}" class="statusSelect">
               <option value=""></option>
               <option value="enrolled">入学 (Enrolled)</option>
               <option value="graduated">卒業 (Graduated)</option>
@@ -106,11 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
       rowCount++;
 
       // Disable button after 7 rows
-      if (rowCount === 7) {
+      if (rowCount === 8) {
         addRowBtn.disabled = true;
       }
     }
   });
+
+  //combining name results 
 
 document.getElementById('myForm').addEventListener('submit', (event) => {
   console.log("row");
