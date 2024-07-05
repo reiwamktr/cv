@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const relativesInJapan = document.querySelectorAll('input[name="relativeInfoJapan"]');
+  const relativesInJapan = document.querySelectorAll('input[name="relatives_status_japan"]');
 const relativesInJapanInformation = document.getElementsByClassName('relativesInJapanInformation')[0]
 relativesInJapanInformation.classList.add('statusHide')
 

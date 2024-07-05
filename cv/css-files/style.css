@@ -239,9 +239,9 @@ th:hover {
 
 /*married status */
 
-.marriedWithChildrenHide{
+/* .marriedWithChildrenHide{
   display: none;
-}
+} */
 
 .drivingLicense > div,
 .marriedStatus > div,
@@ -263,6 +263,11 @@ th:hover {
   text-align: start;
   padding-left: 5% !important;
 }
+
+.childrenStatus{
+  display: inline;
+}
+
 
 
 
