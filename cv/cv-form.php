@@ -1,3 +1,126 @@
+<?php
+$con = mysqli_connect("localhost","root","", "cv_collection");
+
+if(!$con){
+  die("Error in mysql". mysqli_connect_error());
+}
+
+// $sql = "CREATE DATABASE cv_colelction";
+
+// if ($con->query($sql) === TRUE){
+//   echo "database created successfully";
+// }
+
+// else{
+//   echo "error creating database: ". $con->error;
+// };
+
+// $con->close();
+
+// $sql = "CREATE TABLE user_details (
+//   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+//   full_name_katakana TINYTEXT NOT NULL,
+//   full_name_english TINYTEXT NOT NULL,
+//   date_of_birth DATE NOT NULL,
+//   address_katakana TEXT NOT NULL,
+//   address_english TEXT NOT NULL,
+//   age TINYTEXT NOT NULL,
+//   gender TINYTEXT NOT NULL,
+//   language_proficiency TINYTEXT NOT NULL,
+//   current_residence TINYTEXT NOT NULL,
+//   email TEXT NOT NULL,
+//   phone_no VARCHAR(20) NOT NULL,
+//   religion TINYTEXT NOT NULL,
+//   nationality TINYTEXT NOT NULL,
+//   hobby TINYTEXT NOT NULL,
+//   `character` TINYTEXT NOT NULL,
+//   purpose TINYTEXT NOT NULL,
+//   license TINYTEXT NOT NULL,
+//   marital_status TINYTEXT NOT NULL,
+//   japan_living_status TINYTEXT NOT NULL,
+//   blood_type TINYTEXT NOT NULL,
+//   height_cm TINYTEXT NOT NULL,
+//   `weight` TINYTEXT NOT NULL,
+//   allergy_status TINYTEXT NOT NULL,
+//   restrict_eating TINYTEXT NOT NULL
+
+// )";
+
+// if($con->query($sql)===TRUE){
+//   echo "successfully  created table";
+// }else{
+//   echo "failed to create table" . $con->error;
+// }
+
+// $con->close();
+
+
+
+
+$full_name_katakana = $_POST["full_name_katakana"] ?? '';
+$full_name_english = $_POST["full_name_english"] ?? '';
+$date_of_birth = $_POST["date_of_birth"] ?? '';
+$address_katakana = $_POST["address_katakana"] ?? '';
+$address_english = $_POST["address_english"] ?? '';
+$age = $_POST["age"] ?? '';
+$gender = $_POST["gender"] ?? '';
+$language_proficiency = $_POST["language_proficiency"] ?? '';
+$current_residence = $_POST["current_residence"] ?? '';
+$email = $_POST["email"] ?? '';
+$phone_no = $_POST["phone_no"] ?? '';
+$religion = $_POST["religion"] ?? '';
+$nationality = $_POST["nationality"] ?? '';
+$hobby = $_POST["hobby"] ?? '';
+$character = $_POST["character"] ?? '';
+$purpose = $_POST["purpose"] ?? '';
+$license = $_POST["license"] ?? '';
+$marital_status = $_POST["marital_status"] ?? '';
+$japan_living_status = $_POST["japan_living_status"] ?? '';
+$blood_type = $_POST["blood_type"] ?? '';
+$height_cm = $_POST["height_cm"] ?? '';
+$weight = $_POST["weight"] ?? '';
+$allergy_status = $_POST["allergy_status"] ?? '';
+$restrict_eating = $_POST["restrict_eating"] ?? '';
+
+
+// Prepare SQL statement with placeholders
+$sql = "INSERT INTO user_details (
+    full_name_katakana, full_name_english, date_of_birth, address_katakana, address_english, age, gender,
+    language_proficiency, current_residence, email, phone_no, religion, nationality, hobby, `character`, purpose,
+    license, marital_status, japan_living_status, blood_type, height_cm, `weight`, allergy_status, restrict_eating
+) VALUES (
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+)";
+
+// Prepare the statement
+$stmt = $con->prepare($sql);
+
+if ($stmt) {
+    // Bind parameters
+    $stmt->bind_param(
+        "ssssssssssssssssssssssss",
+        $full_name_katakana, $full_name_english, $date_of_birth, $address_katakana, $address_english, $age, $gender,
+        $language_proficiency, $current_residence, $email, $phone_no, $religion, $nationality, $hobby, $character, $purpose,
+        $license, $marital_status, $japan_living_status, $blood_type, $height_cm, $weight, $allergy_status, $restrict_eating
+    );
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "Record inserted successfully";
+    } else {
+        echo "Error executing statement: " . $stmt->error;
+    }
+
+    // Close the statement
+    $stmt->close();
+} else {
+    echo "Error preparing statement: " . $con->error;
+}
+
+// Close the connection
+$con->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +133,13 @@
 </head>
 
 <body>
-  <form action="" id="myForm">
+  <div id="">
+  <form action="cv-form.php" id="myForm" method="post">
     <button class="printBtn" id="printBtn">Print this page</button>
+    <button type="submit">Submit</button>
 
     <!-- personal details table started -->
-    <table class="detailsTop">
+    <table class="detailsTop tableDetails">
       <colgroup>
         <col class="col-1">
         <col class="col-2">
@@ -190,7 +315,7 @@
     <!-- personal details table ended -->
 
     <!-- japan details table started -->
-    <table class="japaneseDetails">
+    <table class="japaneseDetails tableDetails" >
       <colgroup>
         <col>
         <col>
@@ -251,7 +376,7 @@
     <!-- japan details table ended -->
 
     <!-- digital details table started -->
-    <table>
+    <table class="tableDetails">
       <colgroup>
         <col>
         <col>
@@ -308,7 +433,7 @@
     <!-- digital details table ended -->
 
     <!-- other details table started -->
-    <table>
+    <table class="tableDetails">
       <colgroup>
         <col>
         <col>
@@ -896,13 +1021,14 @@
     </table>
     <!-- other details table ended -->
   </form>
+  </div>
 </body>
 <script>
 
   document.addEventListener('keydown', function (event) {
     if (event.ctrlKey && (event.key === 'p' || event.key === 'P')) {
       event.preventDefault();
-      alert('Pleae use the button to print');
+      alert('Please use the button to print');
     }
   });
 

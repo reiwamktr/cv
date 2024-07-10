@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   countryCode.removeAttribute('name');
   phoneInput.removeAttribute('name');
+  
 });
 
 });

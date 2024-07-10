@@ -9,19 +9,19 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-body {
+/* body {
   font-size: 12px;
   padding: 25px;
   height: 80%;
-}
+} */
 
-table {
-  border-collapse: collapse;
-  table-layout: auto;
-  width: 900px;
-  text-align: center;
-  border: 1px solid rgb(135, 135, 135);
-  margin-bottom: 10px;;
+.tableDetails, table {
+  border-collapse: collapse  !important;
+  table-layout: auto !important;
+  width: 900px !important;
+  text-align: center !important;
+  border: 1px solid rgb(135, 135, 135) !important;
+  margin-bottom: 10px !important;
 }
 .height{
   display: inline;;
@@ -59,7 +59,7 @@ table {
   width: 20px;
 }
 
-input[type="text"] {
+.tableDetails input[type="text"] {
   padding: 3px;
   cursor: text;
 }
@@ -126,7 +126,7 @@ input[type="checkbox"]{
   
 }
 
-textarea{
+.tableDetails textarea{
   min-width: 211px;
   min-height: 70px;
 
@@ -159,22 +159,22 @@ textarea{
 
 col {
   width: 52px;
-  border: 1px solid black;
+  border: 1px solid black !important;
 }
 
-tr {
-  border: 1px solid black;
-  height: 25px;
-  margin-left: 10px;
-  padding: 20px;
+.tableDetails tr {
+  border: 1px solid black!important;
+  height: 25px  !important;
+  margin-left: 10px !important;
+  padding: 20px !important;
 }
 
 .personalDetails tr:first-child {
   height: 35px;
 }
-td, th{
-  padding: 5px 0;
-  font-size: 15px;;
+.tableDetails td, th{
+  padding: 5px 0 !important;
+  font-size: 15px !important;
 }
 
 .imageContainer {
@@ -186,7 +186,7 @@ td, th{
   object-fit: cover;
 }
 
-img {
+.tableDetails img {
   width: calc(260px / 1.8);
   position: absolute;
   top: -9999px;
@@ -229,12 +229,12 @@ img {
 }
 
 
-th {
-  background-color: #ddebf6;
+.tableDetails th {
+  background-color: #ddebf6 !important;
 }
 
 th:hover {
-  background: #b4c9da;
+  background: #b4c9da !important;
 }
 
 /*married status */

@@ -97,8 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.getElementById('myForm').addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent default form submission
+  document.getElementById('myForm').addEventListener('submit', () => {
   
     // Iterate through each row in employment details
     document.querySelectorAll('.employmentDetails tr').forEach(row => {

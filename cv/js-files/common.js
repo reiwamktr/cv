@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById('myForm').addEventListener('submit', () => {
-
     //consolidating date of birth in single column
     const dateOfBirth = document.getElementById('dateOfBirth');
     const dateYear = document.getElementById('year');

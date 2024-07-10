@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.getElementById("myForm").addEventListener("submit", (e) => {
+  document.getElementById("myForm").addEventListener("submit", () => {
     const certificateDate = document.getElementById("certificateDate");
     const certificateYear = document.getElementById("certificateYear");
     const certificateMonth = document.getElementById("certificateMonth");

@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //combining name results 
 
-document.getElementById('myForm').addEventListener('submit', (event) => {
+document.getElementById('myForm').addEventListener('submit', () => {
   console.log("row");
     // Process education details
     document.querySelectorAll('.educationDetails tr').forEach(row => {
