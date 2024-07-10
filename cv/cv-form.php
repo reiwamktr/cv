@@ -5,58 +5,6 @@ if(!$con){
   die("Error in mysql". mysqli_connect_error());
 }
 
-// $sql = "CREATE DATABASE cv_colelction";
-
-// if ($con->query($sql) === TRUE){
-//   echo "database created successfully";
-// }
-
-// else{
-//   echo "error creating database: ". $con->error;
-// };
-
-// $con->close();
-
-// $sql = "CREATE TABLE user_details (
-//   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-//   full_name_katakana TINYTEXT NOT NULL,
-//   full_name_english TINYTEXT NOT NULL,
-//   date_of_birth DATE NOT NULL,
-//   address_katakana TEXT NOT NULL,
-//   address_english TEXT NOT NULL,
-//   age TINYTEXT NOT NULL,
-//   gender TINYTEXT NOT NULL,
-//   language_proficiency TINYTEXT NOT NULL,
-//   current_residence TINYTEXT NOT NULL,
-//   email TEXT NOT NULL,
-//   phone_no VARCHAR(20) NOT NULL,
-//   religion TINYTEXT NOT NULL,
-//   nationality TINYTEXT NOT NULL,
-//   hobby TINYTEXT NOT NULL,
-//   `character` TINYTEXT NOT NULL,
-//   purpose TINYTEXT NOT NULL,
-//   license TINYTEXT NOT NULL,
-//   marital_status TINYTEXT NOT NULL,
-//   japan_living_status TINYTEXT NOT NULL,
-//   blood_type TINYTEXT NOT NULL,
-//   height_cm TINYTEXT NOT NULL,
-//   `weight` TINYTEXT NOT NULL,
-//   allergy_status TINYTEXT NOT NULL,
-//   restrict_eating TINYTEXT NOT NULL
-
-// )";
-
-// if($con->query($sql)===TRUE){
-//   echo "successfully  created table";
-// }else{
-//   echo "failed to create table" . $con->error;
-// }
-
-// $con->close();
-
-
-
-
 $full_name_katakana = $_POST["full_name_katakana"] ?? '';
 $full_name_english = $_POST["full_name_english"] ?? '';
 $date_of_birth = $_POST["date_of_birth"] ?? '';
@@ -123,7 +71,6 @@ $con->close();
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,7 +81,7 @@ $con->close();
 
 <body>
   <div id="">
-  <form action="cv-form.php" id="myForm" method="post">
+  <form action="cv-form.php" id="myForm" method="get">
     <button class="printBtn" id="printBtn">Print this page</button>
     <button type="submit">Submit</button>
 
@@ -1053,7 +1000,7 @@ $con->close();
 <script type="module" src="js-files/familyHistory.js"></script>
 <script type="module" src="js-files/details.js"></script>
 <script type="module" src="js-files/personality.js"></script>
-<script type="module" src="js-files/companyBg.js"></script>
+<script type="module" src="js-files/company.js"></script>
 <script src="js-files/common.js"></script>
 <script src="js-files/relativesStatus.js"></script>
 <script src="js-files/marriedStatus.js"></script>
