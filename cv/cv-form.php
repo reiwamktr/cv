@@ -4,7 +4,6 @@ $con = mysqli_connect("localhost","root","", "cv_collection");
 if(!$con){
   die("Error in mysql". mysqli_connect_error());
 }
-
 $full_name_katakana = $_POST["full_name_katakana"] ?? '';
 $full_name_english = $_POST["full_name_english"] ?? '';
 $date_of_birth = $_POST["date_of_birth"] ?? '';
@@ -12,7 +11,7 @@ $address_katakana = $_POST["address_katakana"] ?? '';
 $address_english = $_POST["address_english"] ?? '';
 $age = $_POST["age"] ?? '';
 $gender = $_POST["gender"] ?? '';
-$language_proficiency = $_POST["language_proficiency"] ?? '';
+$language_proficiency = $_POST["language_proficiency"] ?? [];
 $current_residence = $_POST["current_residence"] ?? '';
 $email = $_POST["email"] ?? '';
 $phone_no = $_POST["phone_no"] ?? '';
@@ -25,10 +24,16 @@ $license = $_POST["license"] ?? '';
 $marital_status = $_POST["marital_status"] ?? '';
 $japan_living_status = $_POST["japan_living_status"] ?? '';
 $blood_type = $_POST["blood_type"] ?? '';
-$height_cm = $_POST["height_cm"] ?? '';
+$height_cm = $_POST["height"] ?? '';
 $weight = $_POST["weight"] ?? '';
 $allergy_status = $_POST["allergy_status"] ?? '';
 $restrict_eating = $_POST["restrict_eating"] ?? '';
+
+if (is_array($language_proficiency)){
+  $language_proficience = [$language_proficiency];
+};
+
+$languageString = implode(', ', $language_proficiency);
 
 
 // Prepare SQL statement with placeholders
@@ -48,7 +53,7 @@ if ($stmt) {
     $stmt->bind_param(
         "ssssssssssssssssssssssss",
         $full_name_katakana, $full_name_english, $date_of_birth, $address_katakana, $address_english, $age, $gender,
-        $language_proficiency, $current_residence, $email, $phone_no, $religion, $nationality, $hobby, $character, $purpose,
+        $languageString, $current_residence, $email, $phone_no, $religion, $nationality, $hobby, $character, $purpose,
         $license, $marital_status, $japan_living_status, $blood_type, $height_cm, $weight, $allergy_status, $restrict_eating
     );
 
@@ -81,7 +86,7 @@ $con->close();
 
 <body>
   <div id="">
-  <form action="cv-form.php" id="myForm" method="get">
+  <form action="cv-form.php" id="myForm" method="post">
     <button class="printBtn" id="printBtn">Print this page</button>
     <button type="submit">Submit</button>
 
@@ -276,19 +281,19 @@ $con->close();
             <div class="checkboxContainer">
               <div>
                 <div>
-                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency" value="japanese"
+                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency[]" value="japanese"
                     id="langJapanese" >
                   <label for="langJapanese">日本語 (Japanese)</label>
                 </div>
 
                 <div>
-                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency" value="english"
+                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency[]" value="english"
                     id="langEnglish" >
                   <label for="langEnglish">英語 (English)</label>
                 </div>
 
                 <div>
-                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency" value="hindi"
+                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency[]" value="hindi"
                     id="langHindi" >
                   <label for="langHindi">ヒンディー語 (Hindi)</label>
                 </div>
@@ -296,12 +301,12 @@ $con->close();
 
               <div>
                 <div>
-                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency" value="korean"
+                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency[]" value="korean"
                     id="langKorean" >
                   <label for="langKorean">韓国語 (Korean)</label>
                 </div>
                 <div>
-                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency" value="others"
+                  <input style="margin-right: 5px;" type="checkbox" name="language_proficiency[]" value="others"
                     id="langOthers" >
                   <label for="langOthers">その他 (Others)</label>
                 </div>

@@ -68,7 +68,7 @@ class= physiology
   Blood type =  name: blood_type
   height = name: height_ft
            name: height_in
-           name: height_cm
+           name: height
   weight = name: weight
   allergy = name: allergy_status
   What you can't eat = name: restrict_eating

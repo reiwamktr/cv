@@ -25,9 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const dateMonth = document.getElementById('month');
     const dateDay = document.getElementById('day');
 
-    const consolidatedDate =  `${dateYear.value} - ${dateMonth.value} - ${dateDay.value}`
+    const consolidatedDate =  `${dateYear.value}-${dateMonth.value}-${dateDay.value}`
 
-    dateOfBirth.value = consolidatedDate;
+    
+
+    dateOfBirth.value = consolidatedDate.replace(/\s+/g, '');
+    console.log(dateOfBirth.value);
     dateYear.removeAttribute('name');
     dateMonth.removeAttribute('name');
     dateDay.removeAttribute('name');
